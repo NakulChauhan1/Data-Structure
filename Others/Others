@@ -1,0 +1,54 @@
+/*
+// Sample code to perform I/O:
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+	int num;
+	cin >> num;										// Reading input from STDIN
+	cout << "Input number is " << num << endl;		// Writing output to STDOUT
+}
+
+// Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
+*/
+
+// Write your code here
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	vector<int> cord;
+	while (t--){
+		int n;
+		cin>>n;
+		vector<pair<int>> cord(n);
+		for( int i = 0; i<n; i++ ){
+			int x, y;
+			cin>>x>>y;
+			cord.push_back(make_pair(x,y));
+		}
+		int hx = cord[0].first, hy = cord[0].second;
+		int lx = cord[0].first, ly = cord[0].second;
+
+		for( int i = 0; i<n; i++ ){
+			if ( cord[i].first > hx )
+				hx = cord[i].first;
+			if ( cord[i].second > hy )
+				hy = cord[i].second;
+			if ( cord[i].first < lx )
+				hx = cord[i].first;
+			if ( cord[i].second < ly )
+				hy = cord[i].second;
+		}
+		lx = - lx;
+		ly = - ly;
+		int area ( lx + hx ) * ( ly + hy );
+		cout<<area<<endl; 
+	}
+}
