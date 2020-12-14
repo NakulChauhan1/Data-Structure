@@ -1,33 +1,43 @@
 
 #include<iostream>
+#include<vector>
 using namespace std;
 
-class A
+
+int main ()
 {
-  public:
-    A()
+    bool arr[10] = {1,0,1,0,1,0,1,1,1,0};
+
+    int countt = 0, c = 0;
+    for ( int i = 0; i<10; i++ )
     {
-      a = 3;
+        if ( arr[i] == 0 )
+        {
+            countt++;
+        }
+        else
+            c++;
     }
-    static int a;
-};
 
-int A::a = 0;
-
-class B : public A
-{
-  public:
-    B()
+    int res = 0;
+    for ( int i = 0; i<10; i++ )
     {
-      a = 4;
+        if ( arr[i] == 1 )
+        {
+            res += countt;
+        }
+        else
+        {
+            res += c;
+        }
     }
-};
 
-int main()
-{
-  A objA;
-  cout << "Before:" << A::a;
-  B obj;
-  cout << endl << "After:" << A::a;
-  return 0;
+    cout<<res<<endl;
+
+
+
 }
+
+
+
+
