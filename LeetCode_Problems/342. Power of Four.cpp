@@ -1,8 +1,8 @@
-https://leetcode.com/problems/power-of-four/
-
 class Solution {
 public:
     
+    //all power of 2 has only 1 set bit
+        
     
     
     /* Using recursion:
