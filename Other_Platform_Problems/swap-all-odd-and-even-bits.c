@@ -41,3 +41,29 @@ int main()
     }
     return 0;
 }
+
+/*
+int main()
+{
+    int x;
+
+    while(1)
+    {
+        int result = 0;
+        scanf("%d", &x);
+
+        result = x & 0x55555555;
+
+        result = (result << 1);
+
+        result = result | ((x&0xAAAAAAAA) >> 1);
+
+        printf("%d \n", result);
+
+
+
+    }
+
+    return 0;
+}
+*/
